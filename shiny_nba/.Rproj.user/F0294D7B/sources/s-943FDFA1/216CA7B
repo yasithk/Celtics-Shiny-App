@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1542624917828.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "216CA7B",
+    "lastKnownWriteTime" : 1543106855,
+    "last_content_update" : 1543106855892,
+    "path" : "~/Training&Admin/Udemy/shiny_nba/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+        "cursorPosition" : "59,3",
+        "scrollLine" : "21"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

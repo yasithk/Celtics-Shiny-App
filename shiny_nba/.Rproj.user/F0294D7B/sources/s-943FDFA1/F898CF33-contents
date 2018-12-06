@@ -1,0 +1,30 @@
+library(tidyverse)
+library(shiny)
+library(plotly)
+load("nba_shots.RData")
+nba_shots  <- read_rds('celtics_data.rds')
+
+nba_shots %>% 
+  group_by(player_name) %>%
+  summarize(n())
+
+#pre-made function to draw NBA court
+source("helpers.R")
+gg_court = make_court()
+gg_court
+
+#Call relevant player data 
+player_data = filter(nba_shots, player_name == "LeBron James", season == "2003-04")
+
+#plot LeBron's rookie season
+gg_court + geom_point(data = player_data, alpha = 0.75, size = 2.5,
+                      aes(loc_x, loc_y, color = shot_made_flag)) +
+  scale_color_manual("", values = c(made = "blue", missed = "orange"))
+
+###Ploty - framework for creating interactive graphics, its interactivity 
+### does not require running on a server 
+
+plot_ly(data = nba_shots, y = ~shot_distance, color = ~player_name, type = "box") %>% 
+  layout(legend = list(x = 0.2, y = 1.0))
+
+##plotly can be wrapped in ggplot2
